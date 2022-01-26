@@ -90,7 +90,7 @@ public class FileFinder extends Thread {
 				"Searching for Files containing keyword " + keyword + " in \nthe starting directory " + startingPath);
 		System.out.println();
 		final FileOperation operation = new SearchOperation(keyword, startingPath).handle((file) -> {
-			System.out.println("Found File: " + file.getAbsolutePath());
+			System.out.println("\u001b[34;1mFound File\u001b[0m: " + file.getAbsolutePath());
 		});
 		final long time = operation.run();
 		System.out.println("Done searching in " + time + "ms\n");
