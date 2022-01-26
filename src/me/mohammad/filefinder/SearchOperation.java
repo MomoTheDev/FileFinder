@@ -59,7 +59,7 @@ public class SearchOperation implements FileOperation {
 			}
 		} catch (Exception e) {
 			if (!(FileFinder.hideErrors))
-				System.out.println("\u001b[31mAn error occoured while searching through the file: \u001b[0m" + file.getAbsolutePath());
+				System.out.println("\u001b[31mAn error occoured while searching through the file:\u001b[0m " + file.getAbsolutePath());
 		}
 		running = false;
 	}

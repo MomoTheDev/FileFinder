@@ -43,7 +43,7 @@ public class FileFinder extends Thread {
 	private static void exit(final int exitCode, final String message) {
 		switch (exitCode) {
 		case 0: {
-			System.out.println("Invalid arguments!");
+			System.out.println("\u001b[31mInvalid arguments!\u001b[0m");
 			try {
 				if (instance != null)
 					instance.join();
@@ -54,7 +54,7 @@ public class FileFinder extends Thread {
 			break;
 		}
 		case 1: {
-			System.out.println("Please run the program with administrative privileges!");
+			System.out.println("\u001b[31mPlease run the program with administrative privileges!\u001b[0m");
 			try {
 				if (instance != null)
 					instance.join();
@@ -65,7 +65,7 @@ public class FileFinder extends Thread {
 			break;
 		}
 		case 2: {
-			System.out.println("Starting path doesn't exist! PATH: " + message);
+			System.out.println("\u001b[31mStarting path doesn't exist! PATH:\u001b[0m " + message);
 			try {
 				if (instance != null)
 					instance.join();
@@ -90,7 +90,7 @@ public class FileFinder extends Thread {
 				"Searching for Files containing keyword " + keyword + " in \nthe starting directory " + startingPath);
 		System.out.println();
 		final FileOperation operation = new SearchOperation(keyword, startingPath).handle((file) -> {
-			System.out.println("\u001b[34;1mFound File\u001b[0m: " + file.getAbsolutePath());
+			System.out.println("\u001b[34;1mFound File:\u001b[0m " + file.getAbsolutePath());
 		});
 		final long time = operation.run();
 		System.out.println("Done searching in " + time + "ms\n");
