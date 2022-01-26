@@ -21,7 +21,7 @@ public class FileFinder extends Thread {
 	public static void main(final String[] args) {
 		if (instance != null)
 			return;
-		if (args.length != 2)
+		if (args.length < 2)
 			exit(0, null);
 		hideErrors = false;
 		final String keyword = args[0];
