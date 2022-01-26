@@ -49,12 +49,16 @@ public class SearchOperation implements FileOperation {
 	}
 
 	private void operate(final File file) {
-		for (File f : file.listFiles()) {
-			if (f.getName().contains(keyword)) {
-				handler.accept(f);
+		try {
+			for (File f : file.listFiles()) {
+				if (f.getName().contains(keyword)) {
+					handler.accept(f);
+				}
+				if (f.isDirectory())
+					operate(f);
 			}
-			if (f.isDirectory())
-				operate(f);
+		} catch (Exception e) {
+			System.out.println("An error occoured while searching through the file: " + file.getAbsolutePath());
 		}
 		running = false;
 	}
