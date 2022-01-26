@@ -2,10 +2,12 @@ package me.mohammad.filefinder;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 
 public class FileFinder extends Thread {
 
 	protected static FileFinder instance;
+	protected static boolean hideErrors;
 
 	private String keyword;
 	private String startingPath;
@@ -16,13 +18,16 @@ public class FileFinder extends Thread {
 		start();
 	}
 
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 		if (instance != null)
 			return;
 		if (args.length != 2)
 			exit(0, null);
+		hideErrors = false;
 		final String keyword = args[0];
 		final String startingPath = args[1];
+		if (Arrays.asList(args).contains(".HIDE_ERRORS"))
+			hideErrors = true;
 		final File startingPathFile = new File(startingPath);
 		if (!(startingPathFile.exists()))
 			exit(2, startingPath);

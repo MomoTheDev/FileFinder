@@ -58,7 +58,8 @@ public class SearchOperation implements FileOperation {
 					operate(f);
 			}
 		} catch (Exception e) {
-			System.out.println("An error occoured while searching through the file: " + file.getAbsolutePath());
+			if (!(FileFinder.hideErrors))
+				System.out.println("An error occoured while searching through the file: " + file.getAbsolutePath());
 		}
 		running = false;
 	}
