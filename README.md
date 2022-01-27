@@ -1,5 +1,5 @@
 # FileFinder
-A fast file finder for Windows, developed in Java
+A fast file finder for Windows, written in Java
 
 # Installation
 1. Download the latest FileFinder.jar file from here: https://github.com/MomoTheSiM/FileFinder/releases
