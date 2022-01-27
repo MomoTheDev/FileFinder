@@ -2,7 +2,7 @@
 A fast file finder for Windows, developed in Java
 
 # Installation
-1. Install the latest FileFinder.jar file from the [Releases - Link](#https://github.com/MomoTheSiM/FileFinder/releases) section
+1. Install the latest FileFinder.jar file from the 	[Releases](#https://github.com/MomoTheSiM/FileFinder/releases) section
 2. Open a command prompt window in the same folder as the file
 3. Type this command: `Java -jar ./FileFinder.jar KEYWORD PATH/TO/STARTING/POINT .HIDE_ERRORS`
 4. Replace the `KEYWORD` in the command, with your own keyword
